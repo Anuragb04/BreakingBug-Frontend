@@ -49,7 +49,7 @@ export const addStuff = (address, fields) => async (dispatch) => {
 
     try {
         const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${address}`, fields, {
-            headers: { 'Content-Type': 'application/json' },---
+            headers: { 'Content-Type': 'application/json' },
         });
 
         if (result.data.message) {
@@ -97,9 +97,9 @@ export const deleteStuff = (id, address) => async (dispatch) => {
 
 export const updateCustomer = (fields, id) => async (dispatch) => {
     dispatch(updateCurrentUser(fields));
-    await axios.put(`${process.env.REACT_APP_BASE_URL}/CustomerUpdate/${id}`, fields);
-};
-
+    
+    try{
+        await axios.put(`${process.env.REACT_APP_BASE_URL}/CustomerUpdate/${id}`, fields);
         dispatch(stuffUpdated());
 
       } catch (error) {
@@ -108,7 +108,7 @@ export const updateCustomer = (fields, id) => async (dispatch) => {
 
     }
 
-    }
+    };
 
 export const getProductsbySeller = (id) => async (dispatch) => {
     dispatch(getRequest());
