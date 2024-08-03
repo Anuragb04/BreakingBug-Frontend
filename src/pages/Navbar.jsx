@@ -50,11 +50,11 @@ const Navbar = () => {
     const [isCartOpen, setIsCartOpen] = React.useState(false);
 
     // Cart
-    const handleOpen Cart = () => {
-        setIsCartOpen(true);
+    const handleOpenCart = () => { //fixed whitespace
+        setIsCartOpen(true); 
     };
 
-    const handleOpenCart = () => {
+    const handleCloseCart = () => { //changed Open to Close
         setIsCartOpen(false);
     };
 

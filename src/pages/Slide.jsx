@@ -1,11 +1,11 @@
 import { Divider, Box, Typography, Button, styled, Container } from '@mui/material';
 
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom'; // Fixed import
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
 const Slide = ({ products, title }) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate(); //added colon
 
     return (
         <Component>
